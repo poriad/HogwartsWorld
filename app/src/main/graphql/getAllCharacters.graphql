@@ -1,0 +1,10 @@
+query ListCharacters {
+    getAllCharacters {
+        name
+        specie
+        gender
+        house
+        dateOfBirth
+        image
+    }
+}

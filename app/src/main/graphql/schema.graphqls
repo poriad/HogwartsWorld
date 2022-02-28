@@ -1,0 +1,45 @@
+"""This directive allows results to be deferred during execution"""
+directive @defer on FIELD
+
+type Character {
+  name: String
+  specie: String
+  gender: String
+  house: String
+  dateOfBirth: String
+  yearOfBirth: Int
+  ancestry: String
+  eyeColor: String
+  hairColor: String
+  wand: Wand
+  patronus: String
+  hogwartsStudent: Boolean
+  hogwartsStaff: Boolean
+  actor: String
+  alive: Boolean
+  image: String
+}
+
+type Query {
+  """Fetch all Characters"""
+  getAllCharacters: [Character]
+
+  """Fetch characters by House"""
+  getCharactersByHouse(house: String): [Character]
+
+  """Fetch characters that are Hogwarts Students"""
+  getCharactersByHogwartsStudent: [Character]
+
+  """Fetch characters that are Hogwarts Staff"""
+  getCharactersByHogwartsStaff: [Character]
+
+  """Fetch characters that contains the input string"""
+  getCharactersByName(name: String): [Character]
+}
+
+type Wand {
+  wood: String
+  core: String
+  length: Int
+}
+

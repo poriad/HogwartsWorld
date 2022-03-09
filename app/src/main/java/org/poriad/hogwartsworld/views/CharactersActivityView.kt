@@ -1,5 +1,6 @@
 package org.poriad.hogwartsworld.views
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
@@ -43,5 +44,15 @@ class CharactersActivityView : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
         })
+
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when(it.itemId) {
+                R.id.quizNav -> {
+                    startActivity(Intent(this, QuizActivity::class.java))
+                    false
+                }
+                else -> false
+            }
+        }
     }
 }

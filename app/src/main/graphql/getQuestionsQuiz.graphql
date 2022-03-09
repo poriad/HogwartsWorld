@@ -1,0 +1,9 @@
+query QuestionsQuiz {
+    getQuiz {
+        question
+        answers {
+            answer
+            isTrue
+        }
+    }
+}

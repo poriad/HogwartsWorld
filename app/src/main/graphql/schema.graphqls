@@ -1,6 +1,11 @@
 """This directive allows results to be deferred during execution"""
 directive @defer on FIELD
 
+type Answer {
+  answer: String
+  isTrue: Boolean
+}
+
 type Character {
   name: String
   specie: String
@@ -35,6 +40,14 @@ type Query {
 
   """Fetch characters that contains the input string"""
   getCharactersByName(name: String): [Character]
+
+  """Fetch Quiz that contains a question with a list of answers"""
+  getQuiz: [Quiz]
+}
+
+type Quiz {
+  question: String
+  answers: [Answer]
 }
 
 type Wand {

@@ -12,15 +12,31 @@ class Apollo {
             .okHttpClient(OkHttpClient().newBuilder().build())
             .build()
 
+        val apolloClientLocal = ApolloClient.Builder()
+            .serverUrl("http://192.168.1.138:7000/graphql")
+            .okHttpClient(OkHttpClient().newBuilder().build())
+            .build()
+
         suspend fun getAllCharacters(): List<ListCharactersQuery.GetAllCharacter?>? {
-            val response = apolloClient.query(ListCharactersQuery()).execute()
+            val response = apolloClientLocal.query(ListCharactersQuery()).execute()
             Log.d("LaunchList", "Success ${response.data}")
-            var launches = emptyList<ListCharactersQuery.GetAllCharacter?>()
-            if (launches != null && !response.hasErrors()) {
-                launches = response.data?.getAllCharacters!!
+            var characters = emptyList<ListCharactersQuery.GetAllCharacter?>()
+            if (characters != null && !response.hasErrors()) {
+                characters = response.data?.getAllCharacters!!
             }
-            return launches
+            return characters
         }
+
+        suspend fun getQuiz(): List<QuestionsQuizQuery.GetQuiz?>? {
+            val response = apolloClientLocal.query(QuestionsQuizQuery()).execute()
+            Log.d("QuizQuery:", "Success: ${response.data}")
+            var quiz = emptyList<QuestionsQuizQuery.GetQuiz?>()
+            if (quiz != null && !response.hasErrors()) {
+                quiz = response.data?.getQuiz!!
+            }
+            return quiz
+        }
+
     }
 
 }

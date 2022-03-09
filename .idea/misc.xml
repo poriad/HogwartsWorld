@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/HogwartsWorld/app/src/main/res/drawable/background_toast.xml" value="0.325" />
+        <entry key="..\:/HogwartsWorld/app/src/main/res/drawable/ic_baseline_check_circle_outline_24.xml" value="0.325" />
         <entry key="..\:/HogwartsWorld/app/src/main/res/layout/activity_characters.xml" value="0.17239583333333333" />
+        <entry key="..\:/HogwartsWorld/app/src/main/res/layout/activity_quiz.xml" value="0.176" />
         <entry key="..\:/HogwartsWorld/app/src/main/res/layout/character_card.xml" value="0.2" />
         <entry key="..\:/HogwartsWorld/app/src/main/res/layout/character_card_grid.xml" value="0.3625" />
+        <entry key="..\:/HogwartsWorld/app/src/main/res/layout/custom_toast.xml" value="0.3625" />
         <entry key="..\:/HogwartsWorld/app/src/main/res/layout/fragment_character.xml" value="0.25" />
         <entry key="..\:/HogwartsWorld/app/src/main/res/layout/fragment_character_grid.xml" value="0.3625" />
         <entry key="..\:/HogwartsWorld/app/src/main/res/menu/bottom_navigation.xml" value="0.3625" />
